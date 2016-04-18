@@ -1586,7 +1586,11 @@ begin
     end;
   end;
 
-  NotAcceptFlag[aWare] := not NotAcceptFlag[aWare];
+  if fBuildingRepair then begin
+     ResAddToIn(aWare, 1);
+  end else begin
+      NotAcceptFlag[aWare] := not NotAcceptFlag[aWare];
+  end;
 end;
 
 
